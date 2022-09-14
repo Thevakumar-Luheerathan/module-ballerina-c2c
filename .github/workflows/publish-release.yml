@@ -44,8 +44,8 @@ jobs:
           BALLERINA_DEV_CENTRAL: true
           BALLERINA_STAGE_CENTRAL: false
         run: |
-          ./gradlew release -Prelease.useAutomaticVersion=true
-          ./gradlew -Pversion=${VERSION} publish -x test publishToCentral=true
+          ./gradlew release -Prelease.useAutomaticVersion=true -x test
+          ./gradlew -Pversion=${VERSION} publish -x test -PpublishToCentral=true
       - name: Create Github release from the release tag
         run: |
           curl --request POST 'https://api.github.com/repos/Thevakumar-Luheerathan/module-ballerina-c2c/releases' \

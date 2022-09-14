@@ -41,6 +41,8 @@ jobs:
           packageUser: ${{ secrets.BALLERINA_BOT_USERNAME }}
           packagePAT: ${{ secrets.BALLERINA_BOT_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.BALLERINA_BOT_TOKEN }}
+          publishUser: ${{ secrets.BALLERINA_BOT_USERNAME }}
+          publishPAT: ${{ secrets.BALLERINA_BOT_TOKEN }}
           BALLERINA_DEV_CENTRAL: true
           BALLERINA_STAGE_CENTRAL: false
         run: |

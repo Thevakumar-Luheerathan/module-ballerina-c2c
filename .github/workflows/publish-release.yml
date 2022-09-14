@@ -41,12 +41,14 @@ jobs:
           packageUser: ${{ secrets.BALLERINA_BOT_USERNAME }}
           packagePAT: ${{ secrets.BALLERINA_BOT_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.BALLERINA_BOT_TOKEN }}
+          BALLERINA_DEV_CENTRAL: true
+          BALLERINA_STAGE_CENTRAL: false
         run: |
           ./gradlew release -Prelease.useAutomaticVersion=true
-          ./gradlew -Pversion=${VERSION} publish -x test
+          ./gradlew -Pversion=${VERSION} publish -x test publishToCentral=true
       - name: Create Github release from the release tag
         run: |
-          curl --request POST 'https://api.github.com/repos/ballerina-platform/module-ballerina-c2c/releases' \
+          curl --request POST 'https://api.github.com/repos/Thevakumar-Luheerathan/module-ballerina-c2c/releases' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'Authorization: Bearer ${{ secrets.BALLERINA_BOT_TOKEN }}' \
           --header 'Content-Type: application/json' \

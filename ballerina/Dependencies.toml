@@ -7,11 +7,11 @@
 dependencies-toml-version = "2"
 
 [[package]]
-org = "ballerina"
+org = "luhee"
 name = "cloud"
-version = "2.3.1"
+version = "2.3.2"
 modules = [
-	{org = "ballerina", packageName = "cloud", moduleName = "cloud"}
+	{org = "luhee", packageName = "cloud", moduleName = "cloud"}
 ]
 
 

@@ -37,7 +37,7 @@ buildscript {
 }
 
 def packageName = "cloud"
-def packageOrg = "ballerina"
+def packageOrg = "luhee"
 def tomlVersion = stripBallerinaExtensionVersion("${project.version}")
 
 def stripBallerinaExtensionVersion(String extVersion) {
@@ -107,7 +107,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/Thevakumar-Luheerathan/module-${packageOrg}-c2c")
+            url = uri("https://maven.pkg.github.com/Thevakumar-Luheerathan/module-ballerina-c2c")
             credentials {
                 username = System.getenv("publishUser")
                 password = System.getenv("publishPAT")

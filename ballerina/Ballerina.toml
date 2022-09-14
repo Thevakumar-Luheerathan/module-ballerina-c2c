@@ -1,5 +1,5 @@
 [package]
-org = "ballerina"
+org = "luhee"
 name = "cloud"
 version = "2.3.1"
 repository = "https://github.com/ballerina-platform/module-ballerina-c2c"

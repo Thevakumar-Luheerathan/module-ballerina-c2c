@@ -1,0 +1,24 @@
+name: Remove Maven Packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Package name'
+        required: true
+        type: string
+      version:
+        description: 'version'
+        required: true
+        type: string
+
+jobs:
+  remove-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/delete-package-versions@v4
+        with:
+          min-versions-to-keep: 0
+          package-version-ids: ${{ inputs.version }}
+          package-name: ${{ inputs.package }}
+          package-type: 'maven'

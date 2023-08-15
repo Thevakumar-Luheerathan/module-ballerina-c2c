@@ -7,10 +7,6 @@ on:
         description: 'Package name'
         required: true
         type: string
-      version:
-        description: 'version'
-        required: true
-        type: string
 
 jobs:
   remove-package:
@@ -19,6 +15,5 @@ jobs:
       - uses: actions/delete-package-versions@v4
         with:
           min-versions-to-keep: 0
-          package-version-ids: ${{ inputs.version }}
           package-name: ${{ inputs.package }}
           package-type: 'maven'
